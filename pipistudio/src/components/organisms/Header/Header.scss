@@ -1,0 +1,45 @@
+@use '../../../assets/styles/breakpoints' as breakpoints;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  padding-right: 1.5rem;
+  animation: showHeader .5s ease-out forwards;
+  animation-delay: 3s;
+  opacity: 0;
+
+  @media(min-width: breakpoints.$largeBreakpointMin) {
+    align-items: center;
+  }
+  
+  .logo {
+    z-index: 1;
+    img {
+      width: 15rem;
+  
+      @media(min-width: breakpoints.$largeBreakpointMin) {
+        width: 20rem;
+        transition: transform .2s;
+        scale: 1;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+@keyframes showHeader {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

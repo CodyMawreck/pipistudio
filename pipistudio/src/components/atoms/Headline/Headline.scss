@@ -1,0 +1,129 @@
+@use '../../../assets/styles/colors' as colors;
+@use '../../../assets/styles/breakpoints' as breakpoints;
+
+h1 {
+  text-transform: uppercase;
+  color: colors.$white;
+  line-height: 1;
+  letter-spacing: .2rem;
+
+  @media(min-width: breakpoints.$extraLargeBreakpointMin ) {
+    letter-spacing: .5rem;
+  }
+
+  .topText {
+    font-size: 20vw;
+    display: flex;
+
+    @media(min-width: breakpoints.$wideBreakpoint) {
+      font-size: 12vw;
+    }
+
+    @media(min-width: 1300px) and (min-height: 800px) and (max-height: 900px) {
+      font-size: 12vw;
+    }
+
+    @media(min-width: 1300px) and (max-height: 900px) {
+      font-size: 15vw;
+    }
+
+    .mix {
+      animation: slideInFromTop .5s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+    
+    .slash {
+      animation: slideInFromRight .5s ease-out forwards;
+      animation-delay: 1s;
+      color: colors.$red;
+    }
+  }
+
+  .bottomText {
+    display: flex;
+    flex-direction: column;
+    font-size: 9.5vw;
+    color: colors.$white;
+
+    @media(min-width: breakpoints.$wideBreakpoint)  {
+      font-size: 7vw;
+    }
+
+    @media(min-width: 1300px) and (min-height: 800px) and (max-height: 900px) {
+      font-size: 7vw;
+    }
+
+    @media(min-width: 1300px) and (max-height: 900px) {
+      font-size: 9vw;
+    }
+
+    .master {
+      animation: slideInFromBottom 0.5s ease-out forwards;
+      animation-delay: 1.5s;
+    }
+
+    .implementationWrapper {
+      display: flex;
+
+      .implementation {
+        animation: slideInFromLeft 0.5s ease-out forwards;
+        animation-delay: 2s;
+        color: colors.$navy;
+      }
+      
+      .dot {
+        animation: slideInFromRight 0.5s ease-out forwards;
+        animation-delay: 2.5s;
+      }
+    }
+  }
+
+  .mix, .slash, .master, .implementation, .dot {
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(1vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(10vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-5vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

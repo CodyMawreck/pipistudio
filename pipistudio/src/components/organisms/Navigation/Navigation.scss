@@ -1,0 +1,60 @@
+@use '../../../assets/styles/breakpoints' as breakpoints;
+@use '../../../assets/styles/colors' as colors;
+
+.navigation {
+  display: none;
+
+  @media(min-width: breakpoints.$largeBreakpointMin) {
+    display: flex;
+    gap: 4rem;
+  }
+
+  @media(min-width: breakpoints.$largeBreakpointMax) {
+    display: flex;
+    gap: 8rem;
+  }
+
+  @media(max-width: breakpoints.$mediumBreakpointMax) {
+    &--mobileActive {
+      animation: showMenuAnimation 0.5s ease-out forwards;
+    }
+    &--mobileInactive {
+      animation: hideMenuAnimation 0.5s ease-out forwards;
+    }
+
+    &--mobileInactive,
+    &--mobileActive {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5rem;
+      position: absolute;
+      background: linear-gradient(0deg, #3EDBEE 0%, #237D88 100%);
+      top: 0rem;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+    }
+  }
+}
+
+@keyframes showMenuAnimation {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes hideMenuAnimation {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+

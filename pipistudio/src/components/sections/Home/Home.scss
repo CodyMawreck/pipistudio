@@ -1,0 +1,39 @@
+@use '../../../assets/styles/breakpoints' as breakpoints;
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10rem;
+
+  .headline {
+    margin: auto 0;
+  }
+
+  .arrow {
+    padding-right: 20rem;
+
+    @media(min-width: breakpoints.$largeBreakpointMin) {
+      display: none;
+    }
+  }
+
+  .icon {
+    width: 7rem;
+    animation: showIcon .5s ease-out forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+}
+
+
+@keyframes showIcon {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

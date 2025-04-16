@@ -1,0 +1,16 @@
+@use '../../../assets/styles/breakpoints' as breakpoints;
+.icon-button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+@media(min-width: breakpoints.$largeBreakpointMin) {
+  .icon-button {
+    transition: transform .2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

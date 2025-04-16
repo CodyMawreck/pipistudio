@@ -1,0 +1,28 @@
+@use '../../../assets/styles/colors' as colors;
+
+.arrow {
+  font-size: 6rem;
+  transform: rotate(-90deg);
+  color: colors.$white;
+
+  &--disabled {
+    opacity: .5;
+  }
+
+  &--bouncing {
+    animation: bounceDown .7s infinite alternate ease-in-out;
+  }
+
+  &--down {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes bounceDown {
+  from {
+    transform: rotate(90deg) translateX(0);
+  }
+  to {
+    transform: rotate(90deg) translateX(-10px);
+  }
+}

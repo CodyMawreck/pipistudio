@@ -1,0 +1,21 @@
+@use '../../../assets/styles/breakpoints' as breakpoints;
+@use '../../../assets/styles/colors' as colors;
+
+.icons {
+  display: flex;;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  gap: 2rem;
+  z-index: 1;
+
+  @media(min-width: breakpoints.$largeBreakpointMin) {
+    flex-direction: row;
+    padding: 0;
+    gap: 3rem;
+
+    #menu {
+      display: none;
+    }
+  }
+}

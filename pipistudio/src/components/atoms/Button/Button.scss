@@ -1,0 +1,14 @@
+@use '../../../assets/styles/colors.scss' as colors;
+
+.button {
+  text-decoration: none;
+  color: colors.$white;
+  font-size: 2.7rem;
+  transition: transform .2s;
+  background: none;
+  border: 0;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+}
