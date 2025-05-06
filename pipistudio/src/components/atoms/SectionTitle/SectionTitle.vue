@@ -7,10 +7,6 @@ const props = defineProps(['title'])
 
 </script>
 
-<style scoped lang="scss">
-@use '../../../assets/styles/colors' as *;
-h2 {
-  font-size: 9.6rem;
-  color: $white;
-}
+<style lang="scss" scoped>
+@use 'SectionTitle.scss';
 </style>

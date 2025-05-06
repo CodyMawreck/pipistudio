@@ -1,0 +1,53 @@
+@use '../../../assets/styles/breakpoints' as breakpoints;
+@use '../../../assets/styles/colors' as colors;
+
+.speaker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  &-title {
+    color: colors.$white;
+    font-size: 1.8rem;
+    @media(min-width: breakpoints.$wideBreakpoint) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &-options {
+    display: none;
+    position: absolute;
+    background: rgb(255 255 255 / 80%);
+    padding: 1rem;
+    bottom: 15rem;
+    font-size: 2rem;
+    width: 31rem;
+
+    @media(min-width: breakpoints.$wideBreakpoint) {
+      bottom: 20rem;
+    }
+
+    p {
+      color: colors.$red;
+    }
+  }
+
+  li {
+    list-style-position: inside;
+  }
+
+  &-hovered {
+    .speaker-options {
+      display: block;
+    }
+  }
+
+  &-right {
+    ul {
+      text-align: right;
+    }
+  }
+}
+

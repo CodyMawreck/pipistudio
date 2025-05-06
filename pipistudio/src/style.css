@@ -20,9 +20,8 @@ html {
 
 body {
   font-family: 'Covered By Your Grace', cursive;
-  background: linear-gradient(0deg, #3EDBEE 0%, #237D88 100%);
-  height: 100vh;
-  padding: 0 1.5rem;
+  background: linear-gradient(0deg, #3EDBEE 0%, #237D88 100%) no-repeat;
+  padding: 0 1rem;
 }
 
 h1 {
