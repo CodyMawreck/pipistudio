@@ -23,20 +23,24 @@ header {
     z-index: 1;
 
     img {
-      width: 11rem;
+      width: 11.5rem;
 
       @media(min-width: breakpoints.$mediumBreakpointMin) {
         width: 15rem;
       }
   
       @media(min-width: breakpoints.$largeBreakpointMin) {
-        width: 20rem;
+        width: 17rem;
         transition: transform .2s;
         scale: 1;
 
         &:hover {
           transform: scale(1.1);
         }
+      }
+
+      @media(min-width: breakpoints.$wideBreakpoint) {
+        width: 20rem;
       }
     }
   }

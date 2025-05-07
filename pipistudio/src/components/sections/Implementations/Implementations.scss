@@ -1,0 +1,25 @@
+@use '../../../assets/styles/breakpoints' as breakpoints;
+
+.implementations {
+  &__wrapper {
+    margin: 0 auto;
+    @media(min-width: breakpoints.$largeBreakpointMin) {
+      max-width: 85%;
+    }
+  }
+
+
+}
+
+.spotify {
+  width: 100%;
+  height: 86vh;
+
+  @media(min-width: breakpoints.$mediumBreakpointMin) {
+    height: 88vh;
+  }
+
+  @media(min-width: breakpoints.$largeBreakpointMin) {
+    height: 82vh;
+  }
+}

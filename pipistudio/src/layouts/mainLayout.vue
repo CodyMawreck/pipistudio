@@ -30,11 +30,13 @@ import Arrow from '../components/atoms/Arrow/Arrow.vue';
 import Home from '../components/sections/Home/Home.vue';
 import Studio from '../components/sections/Studio/Studio.vue';
 import About from '../components/sections/About/About.vue';
+import Implementations from '../components/sections/Implementations/Implementations.vue';
 
 const sectionComponents = [
   { component: Home, class: 'home' },
   { component: Studio, class: 'studio' },
   { component: About, class: 'about' },
+  { component: Implementations, class: 'implementations' },
 ];
 const sectionRefs = ref([]);  // Przechowujemy elementy DOM
 const currentSectionIndex = ref(0);
