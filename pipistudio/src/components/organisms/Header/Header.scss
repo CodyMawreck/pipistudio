@@ -12,16 +12,22 @@ header {
   animation: showHeader .5s ease-out forwards;
   animation-delay: 3s;
   opacity: 0;
+  padding-top: 1rem;
 
   @media(min-width: breakpoints.$largeBreakpointMin) {
     align-items: center;
+    padding-top: 0;
   }
   
   .logo {
     z-index: 1;
 
     img {
-      width: 13rem;
+      width: 11rem;
+
+      @media(min-width: breakpoints.$mediumBreakpointMin) {
+        width: 15rem;
+      }
   
       @media(min-width: breakpoints.$largeBreakpointMin) {
         width: 20rem;

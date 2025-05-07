@@ -4,6 +4,11 @@
   font-size: 6rem;
   transform: rotate(-90deg);
   color: colors.$white;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .5;
+  }
 
   &--disabled {
     opacity: .5;

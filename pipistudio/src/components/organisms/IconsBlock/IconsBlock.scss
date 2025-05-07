@@ -5,9 +5,13 @@
   display: flex;;
   align-items: center;
   flex-direction: column;
-  padding-top: 1.5rem;
+  padding-top: 1.2rem;
   gap: 2rem;
   z-index: 1;
+
+  @media(min-width: breakpoints.$mediumBreakpointMin) {
+    padding-top: 1.8rem;
+  }
 
   @media(min-width: breakpoints.$largeBreakpointMin) {
     flex-direction: row;
