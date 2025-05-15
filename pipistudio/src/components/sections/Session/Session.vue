@@ -27,15 +27,7 @@
       </div>
     </div>
     <div class="session__booking--form">
-      <form @submit.prevent="sendMessage" class="form">
-        <input v-model="name" placeholder="Imię i nazwisko" required />
-        
-        <input v-model="datetime" placeholder="Data i" type="datetime-local" required />
-        
-        <input v-model="email" type="email" placeholder="E-mail" required />
-
-        <button type="submit">Zapytaj o sesję</button>
-      </form>
+      <Form />
       <div>
         <strong>Cennik</strong>
         <p>1h realizacja - 70 PLN </p>
@@ -51,6 +43,7 @@
 
 <script setup>
 import SectionTitle from '../../atoms/SectionTitle/SectionTitle.vue';
+import Form from '../../organisms/Form/Form.vue';
 
 </script>
 

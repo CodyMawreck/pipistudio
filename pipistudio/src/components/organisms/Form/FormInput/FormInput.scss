@@ -1,0 +1,65 @@
+@use '../../../../assets/styles/breakpoints' as breakpoints;
+@use '../../../../assets/styles/colors' as colors;
+
+
+.form {
+  &__field {
+
+    &--input {
+      background: none;
+      border: 1px solid colors.$white;
+      padding: 1rem 1rem 1rem 2rem;
+      font-size: 2rem;
+      color: colors.$white;
+      font-family: 'Covered By Your Grace', cursive;
+      min-width: 100%;
+    
+      @media(min-width: breakpoints.$largeBreakpointMin) {
+        font-size: 2.4rem;
+        min-width: 80%;
+      }
+    
+      &::placeholder {
+        color: white;
+      }
+
+      &:focus {
+        outline: none;
+        border: 1px solid colors.$aqua;
+        color: colors.$aqua;
+        &::placeholder {
+          color: colors.$aqua;
+        }
+      }
+
+      &[type="datetime-local"]::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+        cursor: pointer;
+      }
+    }
+    
+
+    &--error {
+      min-height: 3rem; 
+      line-height: 3rem;
+      color: colors.$red;
+      font-size: 2rem;
+  
+      small {
+        display: block;
+        visibility: visible;
+        color: colors.$red;
+      }
+  
+      &:empty small {
+        visibility: hidden;
+      }
+    }
+    
+  }
+}
+
+
+
+
+
