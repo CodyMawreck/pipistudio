@@ -3,9 +3,9 @@
     @mouseenter="onMouseEnter" 
     @mouseleave="onMouseLeave"
   >
-    <p class="speaker-title">{{ speakerTitle }}</p>
+    <p class="speaker__title">{{ speakerTitle }}</p>
     <Speaker />
-    <div class="speaker-options">
+    <div class="speaker__options">
       <ul>
         <p>{{ contentTitle }}</p>
         <li v-for="(option, index) in contentOption" :key="index">
@@ -45,8 +45,8 @@ const computedClasses = computed(() => [
   props.className,
   'speaker',
   {
-    'speaker-hovered': isHovered.value,
-    'speaker-right':  props.isRightSide, 
+    'speaker__hovered': isHovered.value,
+    'speaker__right':  props.isRightSide, 
   }
 ]);
 

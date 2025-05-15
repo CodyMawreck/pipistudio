@@ -32,8 +32,8 @@
       />
     </div>
     <div class="about__triangles">
-      <div class="triangle"></div>
-      <div class="triangle"></div>
+      <div class="about__triangles--triangle"></div>
+      <div class="about__triangles--triangle"></div>
     </div>
 </template>
 

@@ -1,10 +1,10 @@
 <template>
   <div
-  :isDisabled="isDisabled"
-  :arrowDown="arrowDown"
-  :class="computedClasses"
-  :isDownBouncing="isDownBouncing"
-  @click="onClick"
+    :isDisabled="isDisabled"
+    :arrowDown="arrowDown"
+    :class="computedClasses"
+    :isDownBouncing="isDownBouncing"
+    @click="onClick"
   >
     {{ arrow }}
   </div>
@@ -47,8 +47,6 @@ const computedClasses = computed(() => [
     'arrow--down': props.arrowDown
   }
 ]);
-
-
 </script>
 
 <style lang="scss" scoped>

@@ -23,6 +23,7 @@ body {
   font-family: 'Covered By Your Grace', cursive;
   background: linear-gradient(0deg, #3EDBEE 0%, #237D88 100%) no-repeat;
   padding: 0 1rem;
+  overflow-y: scroll;
 }
 
 h1 {
@@ -31,4 +32,8 @@ h1 {
 
 section {
   height: 100vh;
+}
+
+.noScroll {
+  overflow-y: hidden;
 }

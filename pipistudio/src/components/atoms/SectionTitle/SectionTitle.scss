@@ -15,6 +15,7 @@ h2 {
   @media(min-width: breakpoints.$largeBreakpointMin) {
     font-size: 5rem;
     padding: .5rem 0 3rem 0;
+    opacity: 0;
   }
 
   @media(min-width: breakpoints.$wideBreakpoint) {
