@@ -1,0 +1,57 @@
+@use '../../../assets/styles/breakpoints' as breakpoints;
+@use '../../../assets/styles/colors' as colors;
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  left: 0;
+  right: 0;
+
+  @media(min-width: breakpoints.$mediumBreakpointMin) {
+    flex-direction: column;
+    bottom: 1rem;
+  }
+
+  img {
+    width: 6rem;
+
+    @media(min-width: breakpoints.$mediumBreakpointMin) {
+      width: 10rem;
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    text-decoration: underline;
+    text-decoration-color: colors.$red;
+    transition: transform 0.2s ease;
+    display: flexbox;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__text {
+    display: flex;
+    gap: .8rem;
+  }
+
+  &__text,
+  &__button {
+    color: colors.$white;
+    font-size: 1.4rem;
+  
+
+    @media(min-width: breakpoints.$mediumBreakpointMin) {
+      font-size: 2rem;
+    }
+  }
+}

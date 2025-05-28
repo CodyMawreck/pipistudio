@@ -22,11 +22,13 @@
       @onClick="goToNextSection"
     />
   </div>
+  <Footer />
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import Header from '../components/organisms/Header/Header.vue';
+import Footer from '../components/organisms/Footer/Footer.vue';
 import Arrow from '../components/atoms/Arrow/Arrow.vue';
 import Home from '../components/sections/Home/Home.vue';
 import Studio from '../components/sections/Studio/Studio.vue';

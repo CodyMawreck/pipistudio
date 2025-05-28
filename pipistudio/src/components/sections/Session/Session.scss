@@ -52,6 +52,11 @@
   
   &--mobile,
   &--info {
+    text-align: center;
+      @media(min-width: breakpoints.$largeBreakpointMin) {
+        text-align: left;
+      }
+
     strong {
       font-size: 4.8rem;
     }
@@ -76,6 +81,7 @@
     &--form {
       min-width: 65%;
       padding: 2rem 0;
+      text-align: center;
 
       @media(min-width: breakpoints.$largeBreakpointMin) {
         min-width: 45%;
