@@ -12,7 +12,6 @@
       :dark="true"
       class="custom-datepicker"
     />
-
     <input
       v-else
       :type="type"
@@ -23,7 +22,6 @@
       @input="onInput"
       @blur="onBlur"
     />
-
     <div class="form__field--error">
       <small>{{ error }}</small>
     </div>
@@ -48,12 +46,10 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue', 'blur']);
 const innerValue = ref(props.modelValue);
 
-// Synchronizuj zmiany z zewnątrz
 watch(() => props.modelValue, (val) => {
   innerValue.value = val;
 });
 
-// Emituj zmiany do rodzica
 watch(innerValue, (val) => {
   emit('update:modelValue', val);
 });
@@ -66,7 +62,6 @@ function onBlur() {
   emit('blur');
 }
 
-// Specjalna obsługa daty – automatycznie oznacz jako touched
 function handleDateUpdate(val) {
   innerValue.value = val;
   emit('update:modelValue', val);

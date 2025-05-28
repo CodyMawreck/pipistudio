@@ -37,7 +37,6 @@ const emit = defineEmits(['click']);
 const onClick = (event) => {
   emit('click', event);
 };
-
 </script>
 
 <style lang="scss" scoped>

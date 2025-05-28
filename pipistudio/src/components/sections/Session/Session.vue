@@ -56,7 +56,6 @@
 <script setup>
 import SectionTitle from '../../atoms/SectionTitle/SectionTitle.vue';
 import Form from '../../organisms/Form/Form.vue';
-
 </script>
 
 <style lang="scss">

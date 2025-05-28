@@ -3,7 +3,7 @@
   <Arrow
     class="home__arrow"
     @onClick="handleArrowClick"
-    arrowDown="true"
+    :arrowDown="true"
   />
   <Microphone 
     class="home__icon" 

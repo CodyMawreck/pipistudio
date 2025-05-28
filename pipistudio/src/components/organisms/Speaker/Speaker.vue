@@ -14,8 +14,6 @@
       </ul>
     </div>
   </div>
-
-  
 </template>
 
 <script setup>
