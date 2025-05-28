@@ -56,12 +56,21 @@ const handleTouchStart = (e) => {
   touchStartY = e.touches[0].clientY;
 };
 
+let isScrolling = false;
+const scrollDelay = 1450;
+
 const handleTouchEnd = (e) => {
   const touchEndY = e.changedTouches[0].clientY;
   const deltaY = touchEndY - touchStartY;
-  if (Math.abs(deltaY) < 50) return;
 
+  if (Math.abs(deltaY) < 50 || isScrolling) return;
+
+  isScrolling = true;
   deltaY < 0 ? goToNextSection() : goToPreviousSection();
+
+  setTimeout(() => {
+    isScrolling = false;
+  }, scrollDelay);
 };
 
 const handleKeydown = (e) => {
@@ -73,9 +82,6 @@ const handleKeydown = (e) => {
     goToPreviousSection();
   }
 };
-
-let isScrolling = false;
-const scrollDelay = 1100;
 
 const handleWheel = (e) => {
   e.preventDefault();
