@@ -14,7 +14,7 @@
       />
     </section>
   </main>
-  <div class="bodyArrows">
+  <div class="bodyArrows" :class="{ animate: shouldAnimate }">
     <Arrow
       :isDisabled="currentSectionIndex === 0"
       @onClick="goToPreviousSection"
@@ -49,6 +49,7 @@ const sectionComponents = [
 
 const sectionRefs = ref([]);
 const currentSectionIndex = ref(0);
+const shouldAnimate = ref(false);
 
 let touchStartY = 0;
 
@@ -119,6 +120,10 @@ const goToNextSection = () => {
 };
 
 onMounted(() => {
+   if (window.scrollY === 0) {
+    shouldAnimate.value = true;
+  }
+  
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const index = sectionRefs.value.findIndex((section) => {

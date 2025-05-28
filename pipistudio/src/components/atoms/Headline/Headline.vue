@@ -1,20 +1,22 @@
 <template>
   <h1>
     <div class="topText">
-      <p class="mix">{{ mixText }}</p>
-      <p class="slash">{{ slashText }}</p>
+      <p class="mix" :class="{ animate: shouldAnimate }">{{ mixText }}</p>
+      <p class="slash" :class="{ animate: shouldAnimate }">{{ slashText }}</p>
     </div>
     <div class="bottomText">
-      <p class="master">{{ masteringText }}</p>
+      <p class="master" :class="{ animate: shouldAnimate }">{{ masteringText }}</p>
       <div class="implementationWrapper">
-        <p class="implementation">{{ implementationText }}</p>
-        <p class="dot">{{ dotText }}</p>
+        <p class="implementation" :class="{ animate: shouldAnimate }">{{ implementationText }}</p>
+        <p class="dot" :class="{ animate: shouldAnimate }">{{ dotText }}</p>
       </div>
     </div>
   </h1>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+
 const props = defineProps({
   mixText: {
     type: String,
@@ -37,6 +39,15 @@ const props = defineProps({
     default: '.' 
   }
 })
+
+const shouldAnimate = ref(false);
+
+onMounted(() => {
+  if (window.scrollY === 0) {
+    shouldAnimate.value = true;
+  }
+});
+
 </script>
 
 <style lang="scss" scoped>

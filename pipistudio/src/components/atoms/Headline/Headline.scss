@@ -27,15 +27,25 @@ h1 {
       font-size: 15vw;
     }
 
-    .mix {
-      animation: slideInFromTop .5s ease-out forwards;
+    .mix,
+    .slash {
+      opacity: 1;
+    }
+
+    .slash {
+      color: colors.$red;
+    }
+
+    .mix.animate {
+      opacity: 0;
+      animation: slideInFromTop 0.5s ease-out forwards;
       animation-delay: 0.5s;
     }
-    
-    .slash {
-      animation: slideInFromRight .5s ease-out forwards;
+
+    .slash.animate {
+      opacity: 0;
+      animation: slideInFromRight 0.5s ease-out forwards;
       animation-delay: 1s;
-      color: colors.$red;
     }
   }
 
@@ -45,7 +55,7 @@ h1 {
     font-size: 9.5vw;
     color: colors.$white;
 
-    @media(min-width: breakpoints.$wideBreakpoint)  {
+    @media(min-width: breakpoints.$wideBreakpoint) {
       font-size: 7vw;
     }
 
@@ -57,7 +67,14 @@ h1 {
       font-size: 9vw;
     }
 
-    .master {
+    .master,
+    .implementation,
+    .dot {
+      opacity: 1;
+    }
+
+    .master.animate {
+      opacity: 0;
       animation: slideInFromBottom 0.5s ease-out forwards;
       animation-delay: 1.5s;
     }
@@ -66,24 +83,25 @@ h1 {
       display: flex;
 
       .implementation {
-        animation: slideInFromLeft 0.5s ease-out forwards;
-        animation-delay: 2s;
         color: colors.$navy;
       }
-      
-      .dot {
+
+      .implementation.animate {
+        opacity: 0;
+        animation: slideInFromLeft 0.5s ease-out forwards;
+        animation-delay: 2s;
+      }
+
+      .dot.animate {
+        opacity: 0;
         animation: slideInFromRight 0.5s ease-out forwards;
         animation-delay: 2.5s;
       }
     }
   }
-
-  .mix, .slash, .master, .implementation, .dot {
-    opacity: 0;
-    animation-fill-mode: forwards;
-  }
 }
 
+// KEYFRAMES
 @keyframes slideInFromTop {
   from {
     opacity: 0;

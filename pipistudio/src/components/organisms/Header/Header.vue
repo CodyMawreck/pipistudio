@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="{ animate: shouldAnimateHeader }">
     <div class="logo">
       <a :href="linkHref" :alt="linkAlt">
         <img :src="logoSrc" :alt="logoAlt" />
@@ -11,11 +11,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import Navigation from '../Navigation/Navigation.vue';
 import IconsBlock from '../IconsBlock/IconsBlock.vue';
 
 const isMenuOpen = ref(false);
+const shouldAnimateHeader = ref(true);
 
 const logoSrc = new URL('../../../assets/images/logo.png', import.meta.url).href;
 const logoAlt = 'Logo Pipistudio';
@@ -25,6 +26,12 @@ const linkAlt = 'Strona główna';
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
+
+onMounted(() => {
+  if (window.scrollY > 50) {
+    shouldAnimateHeader.value = false;
+  }
+});
 </script>
 
 <style lang="scss" scoped>

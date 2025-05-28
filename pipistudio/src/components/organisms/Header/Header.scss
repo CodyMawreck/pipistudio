@@ -9,16 +9,22 @@ header {
   top: 0;
   z-index: 999;
   padding-right: 1rem;
-  animation: showHeader .5s ease-out forwards;
-  animation-delay: 3s;
-  opacity: 0;
   padding-top: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s;
 
-  @media(min-width: breakpoints.$largeBreakpointMin) {
+  // Dodana klasa tylko przy pierwszym wejściu na górze strony
+  &.animate {
+    animation: showHeader 0.5s ease-out forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+
+  @media (min-width: breakpoints.$largeBreakpointMin) {
     align-items: center;
     padding-top: 0;
   }
-  
+
   .logo {
     z-index: 1;
 
@@ -26,14 +32,13 @@ header {
       width: 11rem;
       z-index: 1;
 
-
-      @media(min-width: breakpoints.$mediumBreakpointMin) {
+      @media (min-width: breakpoints.$mediumBreakpointMin) {
         width: 15rem;
       }
-  
-      @media(min-width: breakpoints.$largeBreakpointMin) {
+
+      @media (min-width: breakpoints.$largeBreakpointMin) {
         width: 17rem;
-        transition: transform .2s;
+        transition: transform 0.2s;
         scale: 1;
 
         &:hover {
@@ -41,7 +46,7 @@ header {
         }
       }
 
-      @media(min-width: breakpoints.$wideBreakpoint) {
+      @media (min-width: breakpoints.$wideBreakpoint) {
         width: 20rem;
       }
     }
