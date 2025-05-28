@@ -18,6 +18,10 @@
         font-size: 2.4rem;
         min-width: 80%;
       }
+
+      @media(min-width: breakpoints.$wideBreakpoint) {
+        font-size: 3.5rem;   
+      }
     
       &::placeholder {
         color: colors.$white;
@@ -75,4 +79,8 @@
     --dp-font-size: 2.4rem;
     max-width: 80%;
   }
+
+  @media(min-width: breakpoints.$wideBreakpoint) {
+      --dp-font-size: 3.5rem;   
+    }
 }

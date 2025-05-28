@@ -13,7 +13,6 @@
     display: block;
     text-align: left;
   
-
     &:disabled,
     &[disabled] {
       opacity: .4;
@@ -30,6 +29,10 @@
         color: colors.$white;
         cursor: pointer;
       }
+    }
+
+    @media(min-width: breakpoints.$wideBreakpoint) {
+      font-size: 3.5rem;   
     }
   }
 }

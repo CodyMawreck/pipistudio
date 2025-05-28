@@ -40,11 +40,16 @@
       font-size: 2.4rem; 
     }
 
+      @media(min-width: breakpoints.$wideBreakpoint) {
+        font-size: 3.5rem;   
+      }
+
     &--mobile {
       display: flex;
       flex-direction: column;
       gap: 3rem;
       padding-top: 3rem;
+
       @media(min-width: breakpoints.$largeBreakpointMin) {
         display: none;
       }
@@ -104,6 +109,10 @@
 
           @media(min-width: breakpoints.$largeBreakpointMin) {
             font-size: 3.2rem;
+          }
+
+          @media(min-width: breakpoints.$wideBreakpoint) {
+            font-size: 4rem;   
           }
         }
       }

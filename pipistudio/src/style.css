@@ -79,3 +79,13 @@ input::placeholder {
 .dp__input_icon_pad {
   padding-left: 4rem !important;
 }
+
+@media(min-width: 2600px) {
+  .dp__input_icon_pad {
+    padding-left: 5rem !important;
+  }
+}
+
+.dp__input_readonly .dp__input_icon {
+  --dp-icon-color: #3EDBEE !important;
+}

@@ -12,7 +12,6 @@
 </template>
 
 <script setup>
-import { defineEmits } from 'vue';
 import Headline from '../../atoms/Headline/Headline.vue';
 import Microphone from '../../../assets/icons/Microphone.svg';
 import Arrow from '../../atoms/Arrow/Arrow.vue'

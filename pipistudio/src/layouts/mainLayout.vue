@@ -74,9 +74,22 @@ const handleKeydown = (e) => {
   }
 };
 
+let isScrolling = false;
+const scrollDelay = 1100;
+
 const handleWheel = (e) => {
   e.preventDefault();
-  e.deltaY > 0 ? goToNextSection() : goToPreviousSection();
+  if (isScrolling) return;
+
+  isScrolling = true;
+  if (e.deltaY > 0) {
+    goToNextSection();
+  } else {
+    goToPreviousSection();
+  }
+  setTimeout(() => {
+    isScrolling = false;
+  }, scrollDelay);
 };
 
 const scrollToSection = (index) => {

@@ -10,7 +10,6 @@
         class="footer__button"
       />
     </p>
-    <img :src="logoSrc" :alt="logoAlt" />
   </footer>
 </template>
 
