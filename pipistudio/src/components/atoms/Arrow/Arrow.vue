@@ -3,7 +3,6 @@
     :isDisabled="isDisabled"
     :arrowDown="arrowDown"
     :class="computedClasses"
-    :isDownBouncing="isDownBouncing"
     @click="onClick"
   >
     {{ arrow }}
@@ -26,10 +25,6 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  isDownBouncing: {
-    type: Boolean,
-    default: false,
-  }
 })
 
 const emit = defineEmits(['onClick']);

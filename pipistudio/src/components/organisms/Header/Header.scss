@@ -24,6 +24,8 @@ header {
 
     img {
       width: 11rem;
+      z-index: 1;
+
 
       @media(min-width: breakpoints.$mediumBreakpointMin) {
         width: 15rem;

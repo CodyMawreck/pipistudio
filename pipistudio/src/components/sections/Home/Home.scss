@@ -12,7 +12,10 @@
 
   &__arrow {
     padding-right: 20rem;
-
+    animation: showIcon 0.5s ease-out forwards, bounceDown 0.7s infinite alternate ease-in-out;
+    animation-delay: 3s, 3.2s; 
+    opacity: 0;
+    
     @media(min-width: breakpoints.$largeBreakpointMin) {
       display: none;
     }
@@ -33,5 +36,14 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes bounceDown {
+  from {
+    transform: rotate(90deg) translateX(0);
+  }
+  to {
+    transform: rotate(90deg) translateX(-10px);
   }
 }

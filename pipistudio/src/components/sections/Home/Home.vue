@@ -1,8 +1,9 @@
 <template>
   <Headline class="home__headline" />
   <Arrow
-    :isDownBouncing="true"
     class="home__arrow"
+    @onClick="handleArrowClick"
+    arrowDown="true"
   />
   <Microphone 
     class="home__icon" 
@@ -11,9 +12,16 @@
 </template>
 
 <script setup>
+import { defineEmits } from 'vue';
 import Headline from '../../atoms/Headline/Headline.vue';
 import Microphone from '../../../assets/icons/Microphone.svg';
 import Arrow from '../../atoms/Arrow/Arrow.vue'
+
+const emit = defineEmits(['goToNextSection']);
+
+function handleArrowClick() {
+  emit('goToNextSection');
+}
 </script>
 
 <style lang="scss">

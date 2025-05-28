@@ -15,12 +15,13 @@
       :id="icon.id"
       :className="icon.className"
       target="_blank"
+      v-show="!isMobile || !isScrolled || isMenuOpen"
     />
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import IconButton from '../../atoms/IconButton/IconButton.vue';
 
 const props = defineProps({
@@ -31,6 +32,30 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['toggleMenu']);
+
+const isScrolled = ref(false);
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 0;
+};
+
+const isMobile = ref(false);
+
+const handleResize = () => {
+  isMobile.value = window.innerWidth < 1024; // lub Twój breakpoint
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', handleResize);
+  handleScroll();
+  handleResize();
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('resize', handleResize);
+});
 
 const socialIcons = computed(() => [
   {

@@ -8,7 +8,10 @@
       :id="section.id"
       :class="section.class"
     >
-      <component :is="section.component" />
+      <component 
+        :is="section.component"
+        v-bind="section.id === 'home' ? { onGoToNextSection: goToNextSection } : {}"
+      />
     </section>
   </main>
   <div class="bodyArrows">
