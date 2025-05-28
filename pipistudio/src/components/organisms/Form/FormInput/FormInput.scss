@@ -20,7 +20,7 @@
       }
     
       &::placeholder {
-        color: white;
+        color: colors.$white;
       }
 
       &:focus {
@@ -59,7 +59,20 @@
   }
 }
 
+.custom-datepicker {
+  --dp-background-color: transparent !important;
+  --dp-placeholder-color: colors.$white;
+  --dp-primary-color: colors.$white;
+  --dp-border-color: #fff;
+  --dp-border-radius: 0;
+  --dp-font-family: 'Covered By Your Grace', cursive;
+  --dp-font-size: 2rem;
+  --dp-input-padding: 1rem 1rem 1rem 2rem;
+  --dp-time-font-size: 5rem;
+  --dp-icon-color: colors.$white;
 
-
-
-
+  @media (min-width: breakpoints.$largeBreakpointMin) {
+    --dp-font-size: 2.4rem;
+    max-width: 80%;
+  }
+}

@@ -5,15 +5,15 @@
       v-model="contactForm.name"
       :error="errors.name"
       placeholder="Imię i nazwisko"
-      @Input="() => setTouched('name')"
+      @blur="() => setTouched('name')"
     />
     <FormInput
-      type="datetime-local"
+      type="datepicker"
       label="Date"
       v-model="contactForm.date"
       :error="errors.date"
       placeholder="Data i godzina"
-      @Input="() => setTouched('date')"
+      @blur="() => setTouched('date')"
     />
     <FormInput
       type="email"
@@ -21,7 +21,7 @@
       v-model="contactForm.email"
       :error="errors.email"
       placeholder="E-mail"
-      @Input="() => setTouched('email')"
+      @blur="() => setTouched('email')"
     />
     <button type="submit" :disabled="!isFormValid">
       Zapytaj o sesję

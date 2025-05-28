@@ -37,3 +37,40 @@ section {
 .noScroll {
   overflow-y: hidden;
 }
+
+input::placeholder {
+  color: #fff;
+  opacity: 1 !important;
+}
+
+/* DatePicker Styles */
+.dp__theme_dark {
+  --dp-primary-color: #3EDBEE !important; 
+  --dp-border-color-hover: #fff !important;
+  --dp-border-color-focus:  #3EDBEE !important;
+}
+
+.dp__input_wrap:focus-within .dp__input_icon {
+  --dp-icon-color: #3EDBEE;
+}
+
+.dp__input_focus::placeholder {
+  color: #3EDBEE !important;
+}
+
+.dp__action_button {
+  font-size: 2rem !important;
+}
+
+.dp__selection_preview {
+  font-size: 2rem !important;
+}
+
+.dp__icon {
+  stroke: #fff !important;
+  fill: #fff !important;
+}
+
+.dp__input_icon_pad {
+  padding-left: 4rem !important;
+}
