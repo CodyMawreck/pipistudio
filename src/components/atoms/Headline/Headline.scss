@@ -5,7 +5,7 @@ h1 {
   text-transform: uppercase;
   color: colors.$white;
   line-height: 1;
-  letter-spacing: .2rem;
+  letter-spacing: .1rem;
 
   @media(min-width: breakpoints.$extraLargeBreakpointMin ) {
     letter-spacing: .5rem;
