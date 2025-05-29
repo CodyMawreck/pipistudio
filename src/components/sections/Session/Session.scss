@@ -14,6 +14,10 @@
   overflow: hidden;
   padding: 0 1rem;
 
+  @media(max-width: breakpoints.$largeBreakpointMin) {
+    min-height: unset;
+  }
+
   @media(min-width: breakpoints.$largeBreakpointMin) {
     flex-direction: row;
     padding: 0;

@@ -2,14 +2,22 @@
 @use '../../../assets/styles/colors' as colors;
 
 .footer {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  left: 0;
-  right: 0;
-  bottom: 1rem;
+  background: colors.$navy;
+  box-shadow: -30vw 0 0 colors.$navy, 30vw 0 0 colors.$navy;
+  padding-bottom: 2rem;
+
+  @media(min-width: breakpoints.$largeBreakpointMin) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+    background: none;
+    box-shadow: none;
+  }
   
   img {
     width: 9rem;

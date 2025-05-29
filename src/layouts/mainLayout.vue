@@ -50,15 +50,19 @@ const sectionComponents = [
 const sectionRefs = ref([]);
 const currentSectionIndex = ref(0);
 const shouldAnimate = ref(false);
+const isMobile = ref(false);
 
 let touchStartY = 0;
+let isScrolling = false;
+const scrollDelay = 1450;
+
+const updateIsMobile = () => {
+  isMobile.value = window.innerWidth <= 768;
+};
 
 const handleTouchStart = (e) => {
   touchStartY = e.touches[0].clientY;
 };
-
-let isScrolling = false;
-const scrollDelay = 1450;
 
 const handleTouchEnd = (e) => {
   const touchEndY = e.changedTouches[0].clientY;
@@ -120,10 +124,13 @@ const goToNextSection = () => {
 };
 
 onMounted(() => {
-   if (window.scrollY === 0) {
+  updateIsMobile();
+  window.addEventListener('resize', updateIsMobile);
+
+  if (window.scrollY === 0) {
     shouldAnimate.value = true;
   }
-  
+
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const index = sectionRefs.value.findIndex((section) => {
@@ -136,17 +143,23 @@ onMounted(() => {
     }
   });
 
-  window.addEventListener('wheel', handleWheel, { passive: false });
-  window.addEventListener('keydown', handleKeydown);
-  window.addEventListener('touchstart', handleTouchStart, { passive: true });
-  window.addEventListener('touchend', handleTouchEnd, { passive: true });
+  if (!isMobile.value) {
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('keydown', handleKeydown);
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
+  }
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('wheel', handleWheel);
-  window.removeEventListener('keydown', handleKeydown);
-  window.removeEventListener('touchstart', handleTouchStart);
-  window.removeEventListener('touchend', handleTouchEnd);
+  window.removeEventListener('resize', updateIsMobile);
+
+  if (!isMobile.value) {
+    window.removeEventListener('wheel', handleWheel);
+    window.removeEventListener('keydown', handleKeydown);
+    window.removeEventListener('touchstart', handleTouchStart);
+    window.removeEventListener('touchend', handleTouchEnd);
+  }
 });
 </script>
 
