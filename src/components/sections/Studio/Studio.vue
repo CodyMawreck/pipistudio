@@ -21,6 +21,9 @@
         <div>
           <img src="../../../assets/images/foto4.jpeg" alt="Studio 4">
         </div>
+        <div>
+          <img src="../../../assets/images/foto3.jpg" alt="Studio 5">
+        </div>
       </div>
       <div class="speakerWrapper speakerWrapper__right">
         <Speaker 

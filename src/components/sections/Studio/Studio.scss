@@ -72,10 +72,10 @@
   
       div {
         border-top: 4px solid colors.$white;
-        max-height: 15rem;
+        max-height: 15.5rem;
   
         @media(max-height: 700px) {
-          max-height: 12rem;
+          max-height: 13rem;
         }
 
         @media(min-width: breakpoints.$mediumBreakpointMin) {
@@ -89,6 +89,13 @@
   
         &:first-child {
           border-top: 0;
+        }
+
+        &:last-child {
+        @media(min-width: breakpoints.$largeBreakpointMin) {
+          display: none;
+        }
+
         }
       }
       
@@ -120,6 +127,7 @@
     gap: 1rem;
     padding: 1rem .2rem;
     background: rgb(255 255 255 / 80%);
+    display: none;
 
     @media(min-width: breakpoints.$mediumBreakpointMin) {
       flex-direction: row;
