@@ -41,13 +41,17 @@
 
   .currentSection {
     font-weight: bold;
-    scale: 1.4;
+    scale: 1.1;
     text-decoration: underline;
     text-decoration-color: colors.$red;
 
     &:hover {
       transform: none;
     }
+
+      @media(min-width: breakpoints.$largeBreakpointMin) {
+        scale: 1.4;
+      }
   }
 
   &--active {
