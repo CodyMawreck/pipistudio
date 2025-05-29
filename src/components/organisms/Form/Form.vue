@@ -89,13 +89,24 @@ function resetForm() {
   }, 5000);
 }
 
+function formatDateTime(datetime) {
+  const dateObj = new Date(datetime);
+
+  const date = dateObj.toISOString().slice(0, 10);
+  const hours = String(dateObj.getHours()).padStart(2, '0');
+  const minutes = String(dateObj.getMinutes()).padStart(2, '0');
+  const time = `${hours}:${minutes}`;
+
+  return `${date} | ${time}`;
+}
+
 async function onSubmit() {
   if (isFormValid.value) {
     const payload = {
       name: contactForm.name,
-      date: contactForm.date,
+      date: formatDateTime(contactForm.date),
       email: contactForm.email,
-      subject: 'Zapytanie o sesję'
+      subject: 'Pipistudio - zapytanie o sesję'
     };
 
     try {

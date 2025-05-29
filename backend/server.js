@@ -34,10 +34,10 @@ app.post('/send', async (req, res) => {
       to: process.env.SMTP_EMAIL,
       subject: subject || 'Wiadomość z formularza kontaktowego Pipistudio',
       html: `
-        <h3>Nowa wiadomość z formularza:</h3>
+        <h3>Nowe zapytanie o sesję:</h3>
         <p><strong>Imię i nazwisko:</strong> ${name}</p>
         <p><strong>E-mail:</strong> ${email}</p>
-        <p><strong>Data:</strong> ${date}</p>
+        <p><strong>Data i godzina sesji:</strong> ${date}</p>
       `,
     };
 
