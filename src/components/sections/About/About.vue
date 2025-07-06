@@ -1,6 +1,6 @@
 <template>
   <div class="about__photo">
-    <img src="../../../assets/images/piotrek.png"/>
+    <img src="../../../assets/images/foto_piotrek.jpg"/>
   </div>
   <div class="about__text">
     <SectionTitle 

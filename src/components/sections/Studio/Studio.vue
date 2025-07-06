@@ -9,20 +9,20 @@
           :contentOption="equipmentList" />
       </div>
       <div class="leftColumn">
-        <img src="../../../assets/images/foto3.jpg" alt="Studio 1">
+        <img src="../../../assets/images/foto_pion2.jpg" alt="Studio 1">
       </div>
       <div class="rightColumn">
         <div>
-          <img src="../../../assets/images/foto5.jpeg" alt="Studio 2">
+          <img src="../../../assets/images/foto_poziom3.jpg" alt="Studio 2">
         </div>
         <div>
-          <img src="../../../assets/images/foto1.webp" alt="Studio 3">
+          <img src="../../../assets/images/foto_piotrek_poziom2.jpg" alt="Studio 3">
         </div>
         <div>
-          <img src="../../../assets/images/foto4.jpeg" alt="Studio 4">
+          <img src="../../../assets/images/foto_poziom1.jpg" alt="Studio 4">
         </div>
         <div>
-          <img src="../../../assets/images/foto3.jpg" alt="Studio 5">
+          <img src="../../../assets/images/foto_piotrek_poziom1.jpg" alt="Studio 5">
         </div>
       </div>
       <div class="speakerWrapper speakerWrapper__right">
