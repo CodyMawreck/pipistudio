@@ -5,6 +5,7 @@
   position: relative;
   min-width: 100%;
   flex: 0 0 100%;
+  max-height: 100dvh;
 
   @media(min-width: breakpoints.$largeBreakpointMin) {
     display: flex;
