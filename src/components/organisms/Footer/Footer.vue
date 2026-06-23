@@ -14,17 +14,18 @@
 </template>
 
 <script setup>
-import Button from '../../atoms/Button/Button.vue';
+import Button from "../../atoms/Button/Button.vue";
 
-const logoSrc = new URL('../../../assets/images/logo.png', import.meta.url).href;
-const logoAlt = 'Logo Pipistudio';
+const logoSrc = new URL("../../../assets/images/logo.png", import.meta.url)
+  .href;
+const logoAlt = "Logo Pipistudio";
 const currentYear = new Date().getFullYear();
-const textBeforeLink = 'Projekt i wykonanie';
-const buttonText = 'webmark';
-const buttonHref = 'mailto:office.webmark@gmail.com';
-const buttonAlt = 'Strona webmark - twórcy strony';
+const textBeforeLink = "Projekt i wykonanie";
+const buttonText = "webbakery.pl";
+const buttonHref = "https://webbakery.pl/";
+const buttonAlt = "webbakery.pl - Strony i Sklepy internetowe";
 </script>
 
 <style lang="scss" scoped>
-@use 'Footer.scss';
+@use "Footer.scss";
 </style>
