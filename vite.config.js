@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import svgLoader from 'vite-svg-loader'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import svgLoader from "vite-svg-loader";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/pipistudio/',
+  base: "/",
   plugins: [
     vue(),
     svgLoader({
@@ -12,7 +12,7 @@ export default defineConfig({
         multipass: true,
         plugins: [
           {
-            name: 'preset-default',
+            name: "preset-default",
             params: {
               overrides: {
                 removeViewBox: false,
